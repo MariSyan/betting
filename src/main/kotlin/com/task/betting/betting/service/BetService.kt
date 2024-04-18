@@ -2,9 +2,11 @@ import com.task.betting.betting.model.Bet
 import com.task.betting.betting.repository.BetRepository
 import com.task.betting.betting.repository.PlayerRepository
 import com.task.betting.betting.repository.WalletRepository
+import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
+@Service
 class BetService(private val playerRepository: PlayerRepository,
                  private val betRepository: BetRepository,
                  private val walletRepository: WalletRepository) {

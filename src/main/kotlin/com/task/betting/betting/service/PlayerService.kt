@@ -21,6 +21,16 @@ class PlayerService(private val playerRepository: PlayerRepository,
                 }
     }
 
+   /* fun registerPlayer(name: String, surname: String, username: String): Mono<Wallet> {
+        val player = Player(name = name, surname = surname, username = username)
+        return playerRepository.save(player.copy(id = null))
+                .flatMap { savedPlayer ->
+                    val wallet = Wallet(playerId = savedPlayer.id!!, balance = 1000)
+                    walletRepository.save(wallet)
+                }
+    }*/
+
+
     fun getPlayerWallet(player_id: Int): Mono<Wallet> {
         return walletRepository.findByPlayerId(player_id)
     }
